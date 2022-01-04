@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+
+
+    <h1>DOM Manipu;lation</h1>
+
+    
+    
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <p>Choose your favourite:</p>
+        <label for="scales">HTML</label>
+        <input type="checkbox" id="html" name="fav" value="html">
+        <label for="scales">Java Script</label>
+        <input type="checkbox" id="js" name="fav" value="js">
+        <br>
+        <p>Choose your Gender</p>
+        <label for="huey">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="huey">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <br>
+        <button onclick="check()">Submit</button>
+
+    
+
+        <div id="nameValue">
+            <div id="nameEntered"></div>
+        </div>
+        <div id="checkedValue"></div>
+        <div id="radioValue"></div>
+
+
+
+        <!-- <div style="border: 2px solid black; width: 300px; height: 600px;">
+            <div>
+                <p>Do you want to open Times of India in below Box</p>
+                
+                <button onclick="checktwo()">Posts</button>
+                <a href="post.html" target="#timesOfIndia">Posts</a>
+            </div>
+            <div id="timesOfIndia"></div>
+            
+        </div> -->
+        
+
+        <script>
+            function check(){
+                //name
+                name = document.getElementById("name").value;
+                document.getElementById("nameEntered").innerHTML = "Name: " + name;
+
+                //checkbox
+                html = document.getElementById("html").value;
+                js = document.getElementById("js").value;
+
+                if (html && js){
+                    document.getElementById("checkedValue").innerHTML = "You cheked both html and js";
+                }
+                else if (html){
+                    document.getElementById("checkedValue").innerHTML = "You cheked html";
+                }
+                else if (js){
+                    document.getElementById("checkedValue").innerHTML = "You cheked js";
+                }
+                else{
+                    document.getElementById("checkedValue").innerHTML = "You cheked none";
+                }
+
+                // radio 
+                male = document.getElementById("male").value;
+                female = document.getElementById("female").value;
+                if (male){
+                    document.getElementById("radioValue").innerHTML = "Gender: Male"
+                }
+                else if (female){
+                    document.getElementById("radioValue").innerHTML = "Gender: Female"
+                }
+            }
+
+            // function checktwo(){
+            //     document.getElementById("timesOfIndia").
+            // }
+        </script>
+
+
+    
+</body>
+</html>
